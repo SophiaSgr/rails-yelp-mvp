@@ -1,19 +1,33 @@
 <div class="container">
-  <%= @restaurant.name %>
-  <br>
-  <%= @restaurant.address %>
-  <br>
-  <%= @restaurant.phone_number %>
-  <br>
-  <%= @restaurant.category %>
-  <br>
-  <%  @restaurant.reviews.each do |review|%>
-  <%= review.rating %>
-  <%= review.content %>
-  <% end %>
 
-  <br>
+
   <%= link_to 'Back', restaurants_path %> |
   <%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %>
-</div>
 
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Category</th>
+      <th scope="col">Review</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td><%= @restaurant.name %></td>
+      <td><%= @restaurant.address %></td>
+      <td><%= @restaurant.phone_number %></td>
+      <td><%= @restaurant.category %></td>
+       <td> <%  @restaurant.reviews.each do |review|%>
+        <%= review.rating %>
+        <%= review.content %>
+        <% end %></td>
+    </tr>
+  </tbody>
+</table>
+</div>

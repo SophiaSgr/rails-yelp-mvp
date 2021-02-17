@@ -1,7 +1,12 @@
-<%= simple_form_for @restaurant do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :phone_number %>
-  <%= f.input :category %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container">
+  <%= simple_form_for @restaurant do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :phone_number %>
+    <%= f.input :category, collection: ["chinese", "italian", "japanese", "french", "belgian", "german"] %>
+    <button class="btn btn-primary" type="submit"><%= f.button :submit %></button>
+
+
+  <% end %>
+</div>
+
